@@ -6,7 +6,7 @@ const StartTyping = ({ onGame, onChangeScore }) => {
   const [dataTyping, setDataTyping] = useState([]);
   const [text, setText] = useState("");
   const [textTyping, setTextTyping] = useState([]);
-  const [timeLeft, setTimeLeft] = useState(2); // 60 seconds for 1 minute
+  const [timeLeft, setTimeLeft] = useState(60); // 60 seconds for 1 minute
   const [displayTime, setDisplayTime] = useState(0);
 
   const handleChangeTyping = (e) => {
