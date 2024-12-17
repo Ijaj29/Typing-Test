@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  background: radial-gradient(#3d3d42, #191a1f);
+  height: 100vh;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home .title {
+  font-size: 80px;
+  text-shadow: 0 10px 10px #000;
+}
+.endTyping,
+.home {
+  display: block;
+  margin: 20px auto;
+  background-color: #191a21;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 5px 19px;
+  font-size: large;
+  letter-spacing: 5px;
+  box-shadow: 0 10px 10px #0005;
+}
+button,
+.btnPlay {
+  display: block;
+  margin: 20px auto;
+  background-color: #000000df;
+  color: #1fe4f6;
+  border-color: #1fe4f6;
+  border-radius: 5px;
+  padding: 5px 19px;
+  font-size: large;
+  letter-spacing: 5px;
+  box-shadow: 0 10px 10px rgba(56, 205, 190, 0.6);
+}
+.home {
+  opacity: 0;
+  animation: showHome 2s 0.3s ease-in-out 1 forwards;
+}
+@keyframes showHome {
+  to {
+    opacity: 1;
+  }
+}
+.start {
+  padding: 20px;
+  text-align: center;
+  gap: 10px;
+  opacity: 0;
+  animation: showHome 1s ease-in-out 1 forwards;
+}
+
+.start .list {
+  padding: 20px;
+  margin-bottom: 20px;
+  list-style-type: none;
+  text-align: left;
+  background: linear-gradient(90deg, #00ffff, #ff00c3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px #ff0000;
+}
+
+.start .list li {
+  display: inline-block;
+  font-size: x-large;
+  color: white;
+  padding: 10px;
+  text-shadow: 0 2px 2px #0009;
+}
+
+.start .inputForm .input {
+  width: 100%;
+  padding: 20px 0;
+  outline: none;
+  text-align: center;
+  font-size: x-large;
+  letter-spacing: 5px;
+  background-color: #0005;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px #0052f7;
+}
+
+.start .list .true {
+  color: greenyellow !important;
+  position: relative;
+}
+
+.start .list .false {
+  color: red !important;
+  position: relative;
+}
+
+.start .list li .false::after,
+.start .list li .true::after {
+  position: absolute;
+  content: +1;
+  text-align: center;
+  animation: showHome 1s 0.3s ease-in-out 1 forwards;
+}
+.start .list li .false::after {
+  content: -1;
+}
+@keyframes showPoint {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+.endTyping {
+  opacity: 0;
+  animation: showHome 1s 0.3s ease-in-out 1 forwards;
+}
+.endTyping .result {
+  display: grid;
+  grid-template-columns: repeat(2 1fr);
+  gap: 50px;
+  text-align: center;
+  font-size: 20px;
+  text-shadow: 0 10px 10px #000;
+}
+.endTyping .result {
+  font-size: 25px;
+}
+
+.wrongWord {
+  color: red;
+}
+
+.number {
+  font-size: 30px;
+}
+
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
+@font-face {
+  font-family: "neontubes";
+  src: url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.eot");
+  src: url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.woff2")
+      format("woff2"),
+    url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.woff")
+      format("woff"),
+    url("https://bitbucket.org/kennethjensen/webfonts/raw/fc13c1cb430a0e9462da56fe3f421ff7af72db71/neontubes/neontubes-webfont.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.main {
+  width: 100%;
+  /* margin: 10px; */
+  font-family: "neontubes";
+  font-size: 2rem;
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main span {
+  display: block;
+  position: relative;
+  transform: translateZ(0) translate3D(0, 0, 0);
+  backface-visibility: hidden;
+  will-change: opacity;
+}
+
+.main .first-span {
+  font-size: 2rem;
+  color: #ffd9e2;
+  text-shadow: 0 0 0 transparent, 0 0 10px #ff003c,
+    0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px #ff003c, 0 0 100px #ff003c,
+    0 0 200px #ff003c, 0 0 300px #ff003c, 0 0 500px #ff003c, 0 0 1000px #ff003c;
+  animation: blink 4s infinite alternate;
+}
+
+@-webkit-keyframes buzz {
+  70% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes buzz {
+  70% {
+    opacity: 0.8;
+  }
+}
+@-webkit-keyframes blink {
+  40% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0.8;
+  }
+  43% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.2;
+  }
+  46% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  40% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0.8;
+  }
+  43% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.2;
+  }
+  46% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .main .first-span {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main .first-span {
+    font-size: 3rem;
+  }
+}
